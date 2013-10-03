@@ -40,13 +40,18 @@ describe Geometry::Triangle do
 
 	its(:sides) { should eq [a, b, c]}
 
-	# non_example {Geometry::Triangle.new(2, 1, 8)}
+end
 
-	# it "should be invalid' " do
-	# 	non_example.valid?.should be false
-	# end
+describe "non_triangle" do
+
+	subject {Geometry::Triangle.new(2, 1, 8)}
+
+	it "should be invalid" do
+		subject.valid?.should be false
+	end
 
 end
+
 
 describe Geometry::Rectangle do
 	let(:length) {6}
@@ -91,6 +96,4 @@ describe Geometry::Circle do
 	its(:radius) {should eq 5}
 
 end
-
-
 
